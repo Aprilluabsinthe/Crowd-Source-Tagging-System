@@ -1,0 +1,88 @@
+{% extends 'crowdsourcedtagging/logged_in_base.html' %}
+
+{% block scripts %}
+    {% load static %}
+    <script src="{% static 'js/fabric.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/single_image.js' %}" type="text/javascript"></script>
+    <link href="{% static 'css/single_image.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% load i18n %}
+
+{% block content %}
+    <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+         style="position: absolute; top: 55%; left: 0;">
+        <div class="toast-header">
+            <strong class="mr-auto">{% trans 'CrowdSourcedTagging' %}</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body" id="toast-content">
+            {% trans "You've successfully submitted an image tagging task" %}!
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <h3>{% trans "Image Task Description" %}</h3>
+            <p>{{ image_task.image_task_description }}</p>
+
+            <div class="bd_example">
+                <a class="btn btn-lg btn-outline-primary" href="{% url 'imagesublist' taskid %}">{% trans "Back" %}</a>
+                {% if image_task.prev_task_id %}
+                    <a id="prev" class="btn btn-lg btn-outline-primary"
+                       href="{% url 'imagesingletask' image_task.prev_task_id %}">{% trans "Prev" %}</a>
+                {% endif %}
+                {% if image_task.next_task_id %}
+                    <a id="next" class="btn btn-lg btn-outline-primary"
+                       href="{% url 'imagesingletask' image_task.next_task_id %}">{% trans "Next" %}</a>
+                {% endif %}
+                {% if finished_task_count != -1 %}
+                    <br><br>
+                    <div class="alert alert-primary" role="alert">
+                        {% trans "In total," %} <a href="#"
+                                                   class="alert-link">{{ finished_task_count }}</a> {% trans "People finished this task." %}
+                    </div>
+                    <a href="{% url 'export_image_task' image_task.id %}" class="btn btn-lg btn-primary">
+                        {% trans "Export" %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">
+                    {% trans "Tagging Image" %}
+                    <span id="tagged" class="badge badge-pill badge-info"
+                          style="display: none;">{% trans "Tagged" %}</span>
+                </div>
+                <img id="id_tag_img" src="{{ image_task.image_task_url }}" class="bd-placeholder-img card-img-top"
+                     width="100%" alt="{{ image_task.image_task_description }}" style="display: none;"/>
+                <input type="hidden" id="id_image_task_id" value="{{ image_task.id }}">
+                <input type="hidden" id="id_user_image_task_tag" value="{{ user_image_task_tag }}">
+                <input type="hidden" id="id_prev_task_id" value="{{ prev_task_id }}">
+                <input type="hidden" id="id_next_task_id" value="{{ next_task_id }}">
+                <input type="hidden" id="id_task_id" value="{{ taskid }}">
+                <canvas id="canvas" width="500" height="1000" style="border: solid 1px">
+                </canvas>
+                <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-lg btn-secondary" id="id_clear_canvas"
+                                onclick="clearCanvas()">
+                            {% trans "Clear" %}
+                        </button>
+                        &nbsp;
+                        &nbsp;
+                        <button type="button" class="btn btn-lg btn-primary" id="id_submit_image"
+                                onclick="saveCanvas()">
+                            {% trans "Submit" %}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <br/>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+# If you need to generate a new secret key, use the get_random_secret_key() function:
+#    from django.core.management.utils import get_random_secret_key
+#    print(get_random_secret_key())
+# Warning: The % character is special to ConfigParser - use %% if your secret has % chars
+# Warning: Changing secret keys invalidates  existing sessions, so may need to delete your DB
+
+[Django]
+Secret: SECRET_KEY
+
+
+[Email]
+Host: smtp.andrew.cmu.edu
+Port: 465
+User: AndrewID
+Password: YourPassword
+
+[GoogleOAuth2]
+Key: GoogleOAuth2 secret key
+Secret: GoogleOAuth2 secret key

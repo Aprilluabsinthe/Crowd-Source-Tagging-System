@@ -1,0 +1,754 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task_creator.html:43
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-20 19:51+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_cn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: crowdsourcedtagging/forms.py:12 crowdsourcedtagging/forms.py:20
+msgid "Name"
+msgstr "姓名"
+
+msgid "Task Name"
+msgstr "任务名称"
+
+#: crowdsourcedtagging/forms.py:13 crowdsourcedtagging/forms.py:21
+msgid "Task Description"
+msgstr "任务描述"
+
+msgid "View details »"
+msgstr "查看详情 »"
+
+msgid "Tagging Image"
+msgstr "请在下方图片中进行标记"
+
+msgid "Image Task Description"
+msgstr "图片任务描述"
+
+#: crowdsourcedtagging/forms.py:14 crowdsourcedtagging/forms.py:22
+msgid "Number of Results to be Collected"
+msgstr "任务所需标记数量"
+
+#: crowdsourcedtagging/forms.py:15 crowdsourcedtagging/forms.py:23
+msgid "Total Money for the Task"
+msgstr "任务总酬金"
+
+#: crowdsourcedtagging/forms.py:16
+msgid "Image URLs"
+msgstr "图片url，Enter隔开"
+
+#: crowdsourcedtagging/forms.py:24
+msgid "Content"
+msgstr "内容"
+
+#: crowdsourcedtagging/forms.py:28
+msgid "Enter amount"
+msgstr "输入金额"
+
+#: crowdsourcedtagging/forms.py:30
+msgid "date published"
+msgstr "发布日期"
+
+#: crowdsourcedtagging/forms.py:38
+msgid "Profile Picture"
+msgstr "个人页图片"
+
+#: crowdsourcedtagging/forms.py:51
+msgid "You must upload a picture"
+msgstr "您必须上传一张照片"
+
+#: crowdsourcedtagging/forms.py:53
+msgid "File type is not image"
+msgstr "文件非图片格式"
+
+#: crowdsourcedtagging/forms.py:55
+msgid "File too big (max size is "
+msgstr "文件过大（上限为"
+
+#: crowdsourcedtagging/forms.py:55
+msgid "bytes"
+msgstr "比特"
+
+#: crowdsourcedtagging/forms.py:64
+msgid "User Name"
+msgstr "用户姓名"
+
+#: crowdsourcedtagging/forms.py:65
+msgid "Email Address"
+msgstr "邮箱地址"
+
+#: crowdsourcedtagging/forms.py:67
+msgid "First Name"
+msgstr "名"
+
+#: crowdsourcedtagging/forms.py:68
+msgid "Last Name"
+msgstr "姓"
+
+#: crowdsourcedtagging/forms.py:69
+msgid "Date Joined"
+msgstr "加入日期"
+
+#: crowdsourcedtagging/forms.py:70
+msgid "Last Login"
+msgstr "上次登录"
+
+#: crowdsourcedtagging/forms.py:101 crowdsourcedtagging/forms.py:121
+msgid "Username"
+msgstr "本站用户名"
+
+#: crowdsourcedtagging/forms.py:102 crowdsourcedtagging/forms.py:122
+msgid "Password"
+msgstr "密码"
+
+#: crowdsourcedtagging/forms.py:110
+msgid "No such username and password combination."
+msgstr "用户名或密码错误。"
+
+#: crowdsourcedtagging/forms.py:123
+msgid "Confirm Password"
+msgstr "确认密码"
+
+#: crowdsourcedtagging/forms.py:124
+msgid "E-mail"
+msgstr "邮箱"
+
+#: crowdsourcedtagging/forms.py:131
+msgid "Passwords don't match."
+msgstr "确认密码不匹配。"
+
+#: crowdsourcedtagging/forms.py:137
+msgid "Username is already taken."
+msgstr "用户名已被占用。"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/base.html:27
+msgid "Crowdsourced Tagging"
+msgstr "众包标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/base.html:64
+msgid "This is a crowd source tagging project for course 17-637"
+msgstr "本项目为17-637课程作业"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/base.html:65
+msgid "Team members"
+msgstr "团队成员"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/base.html:65
+msgid "Kuixi Song"
+msgstr "宋奎熹"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/base.html:65
+msgid "Yubin Gao"
+msgstr "高毓彬"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/base.html:65
+msgid "Di Lu"
+msgstr "陆迪"
+
+msgid "POS tasks"
+msgstr "POS 任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/completion.html:9
+msgid "See all POS tasks"
+msgstr "查看所有 POS 任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/errors.html:11
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:32
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task.html:15
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task_creator.html:26
+msgid "Back"
+msgstr "返回"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:19
+#: crowdsourcedtagging/templates/crowdsourcedtagging/logged_in_base.html:24
+msgid "All Image Tasks"
+msgstr "所有图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:20
+#: crowdsourcedtagging/templates/crowdsourcedtagging/logged_in_base.html:25
+#: crowdsourcedtagging/views.py:194
+msgid "All POS Tasks"
+msgstr "所有 POS 任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:21
+#: crowdsourcedtagging/templates/crowdsourcedtagging/logged_in_base.html:26
+msgid "My Profile"
+msgstr "我的个人页"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:23
+#: crowdsourcedtagging/templates/crowdsourcedtagging/logged_in_base.html:28
+msgid "Logout"
+msgstr "登出"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:32
+msgid "Welcome to Crowdsourced Tagging"
+msgstr "欢迎来到众包标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:33
+msgid "Crowdsourcing"
+msgstr "众包"
+
+msgid "Add Money"
+msgstr "充值"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:33
+msgid "is a distributed problem solving or production model"
+msgstr "是一种分布式生产与任务解决模型"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:34
+msgid "The action of applying tags for machine learning tasks is "
+msgstr "为机器学习等目的，为源添加标签的行为被称为"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:34
+msgid "tagging"
+msgstr "标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:36
+msgid "Start here by clicking on one task category"
+msgstr "点击任务种类以开始您的标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:38
+msgid "Explore Image Tasks"
+msgstr "探索图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:39
+msgid "Explore POS Tasks"
+msgstr "探索 POS 任务"
+
+msgid "Explore"
+msgstr "探索"
+
+msgid "Modify Profile"
+msgstr "修改个人资料"
+
+msgid "Update Avatar"
+msgstr "上传头像"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/homepage.html:44
+#: crowdsourcedtagging/templates/crowdsourcedtagging/logged_in_base.html:13
+msgid "Upload POS Task"
+msgstr "上传 POS 任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:16
+msgid "CrowdSourcedTagging"
+msgstr "众包标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:22
+#| msgid "You've successfully submitted an image tagging task!"
+msgid "You've successfully submitted an image tagging task"
+msgstr "您已成功提交一个图片标注任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:35
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task.html:19
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task_creator.html:30
+msgid "Prev"
+msgstr "上一个"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:39
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_task_list.html:74
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_task_list.html:78
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task.html:24
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task_creator.html:35
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_task_list.html:83
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_task_list.html:87
+msgid "Next"
+msgstr "下一个"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:47
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task.html:34
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task_creator.html:45
+msgid "Tagged"
+msgstr "已标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:62
+msgid "Clear"
+msgstr "清空"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_single_task.html:68
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task.html:63
+msgid "Submit"
+msgstr "提交"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_sub_task_list.html:27
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_sub_task_list.html:22
+msgid "Last tagged"
+msgstr "上次标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_sub_task_list.html:28
+msgid "at"
+msgstr "在"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_sub_task_list.html:35
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_sub_task_list.html:33
+msgid "Tag"
+msgstr "标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_task_list.html:34
+msgid "images"
+msgstr "图片"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_task_list.html:37
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_task_list.html:45
+msgid "Created by"
+msgstr "创建者："
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_task_list.html:52
+#: crowdsourcedtagging/templates/crowdsourcedtagging/image_task_list.html:56
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_task_list.html:61
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_task_list.html:65
+msgid "Previous"
+msgstr "上一个"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/logged_in_base.html:12
+#: crowdsourcedtagging/views.py:377
+msgid "Upload Image Task"
+msgstr "上传图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/login.html:13
+#: crowdsourcedtagging/templates/crowdsourcedtagging/register.html:31
+#: crowdsourcedtagging/views.py:596
+msgid "Register"
+msgstr "注册"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/login.html:26
+#: crowdsourcedtagging/views.py:574
+msgid "Login"
+msgstr "登录"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/login.html:34
+msgid "Sign in with Google"
+msgstr "用谷歌账号登录"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:52
+msgid "Profile"
+msgstr "个人资料"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:54
+msgid "Finished Statistics"
+msgstr "已完成的任务统计"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:56
+msgid "Uploaded Statistics"
+msgstr "已上传的任务统计"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:58
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:320
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task.html:32
+msgid "Wallet"
+msgstr "钱包"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:69
+msgid "You can change your information here"
+msgstr "您可以在此修改您的个人信息"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:130
+msgid "Update Information"
+msgstr "更新信息"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:140
+msgid "Task Statistics"
+msgstr "任务统计"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:142
+msgid "Your Finished tasks"
+msgstr "您已完成的任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:144
+msgid "This user's Finished tasks"
+msgstr "该用户已完成的任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:151
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:159
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:189
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:244
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:283
+msgid "Image tasks"
+msgstr "图片任务"
+
+msgid "Finished"
+msgstr "已完成"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:155
+msgid "You have finished"
+msgstr "您已完成"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:157
+msgid "This user have finished"
+msgstr "该用户已完成"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:163
+msgid "See your finished image tasks"
+msgstr "查看该用户完成的图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:165
+msgid "See This user's finished image tasks"
+msgstr "查看该用户完成的图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:170
+msgid "You haven't finished any Image tasks"
+msgstr "您尚未完成任何图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:172
+msgid "This user haven't finished any Image tasks"
+msgstr "该用户尚未完成任何图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:185
+msgid "You have finished "
+msgstr "您已完成"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:186
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:253
+msgid "Image tasks."
+msgstr "图片任务。"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:188
+msgid "This user have finished "
+msgstr "该用户已完成"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:194
+msgid "See your finished POS tasks"
+msgstr "查看您完成的图片任务 »"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:196
+msgid "See this user's finished POS tasks"
+msgstr "查看该用户完成的图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:201
+msgid "You haven't finished any POS tasks"
+msgstr "您尚未完成任何POS任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:203
+msgid "This user haven't finished any POS tasks"
+msgstr "该用户尚未完成任何POS任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:220
+msgid "Finish some current available to see pie chart here"
+msgstr "您可完成一些现有任务并在此查看您的任务分布饼图"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:222
+msgid "No pie chart for this user yet"
+msgstr "目前无该用户饼图数据"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:231
+msgid "Owner Statistics"
+msgstr "您拥有的任务统计"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:234
+msgid "Your uploaded tasks"
+msgstr "您已上传的任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:236
+msgid "This user's uploaded tasks"
+msgstr "该用户已上传的任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:248
+msgid "You have uploaded "
+msgstr "您已上传 "
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:250
+msgid "This user have uploaded "
+msgstr "您已上传 "
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:257
+msgid "See your uploaded image tasks"
+msgstr "查看您已上传的图片任务 »"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:259
+msgid "See this user's uploaded image tasks"
+msgstr "查看您已上传的图片任务 »"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:264
+msgid "You haven't uploaded any Image tasks"
+msgstr "您尚未上传任何图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:266
+msgid "This user haven't uploaded any Image tasks"
+msgstr "您尚未上传任何图片任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:279
+msgid "You have uploaded"
+msgstr "您已上传"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:281
+msgid "This user have uploaded"
+msgstr "该用户已上传"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:287
+msgid "See your uploaded POS tasks"
+msgstr "查看您已上传的POS任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:289
+msgid "See this user's uploaded POS tasks"
+msgstr "查看该用户已上传的POS任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:294
+msgid "You haven't uploaded any POS tasks"
+msgstr "您尚未上传任何POS任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:296
+msgid "This user haven't uploaded any POS tasks"
+msgstr "该用户尚未上传任何POS任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:311
+msgid "Upload your own tasks to see pie chart here"
+msgstr "您可上传您的任务并在此查看您的任务分布饼图"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:321
+msgid "Recharge your balance"
+msgstr "充值"
+
+msgid "Tagging POS"
+msgstr "请在下方为每一个单词选择词性进行标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:325
+msgid "Your current balance"
+msgstr "余额"
+
+msgid "Back to top"
+msgstr "返回顶部"
+
+msgid "Tagging Tips"
+msgstr "快速标记提示"
+
+msgid "Press"
+msgstr "按下"
+
+msgid "until it focuses on the dropdown of the first word on the right."
+msgstr "直到光标高亮显示在右侧列表第一个单词的选项处。"
+
+msgid "You can use shortcut on your keyboard to expedite the tagging process. To do so,"
+msgstr "您可以使用键盘的快捷方式进行标注。若要这么做，请遵循下列步骤："
+
+msgid "Type the first few letters for the POS tag that you want to select for this word. For example,"
+msgstr "键入您所标注词性的前几个字母。比如，"
+
+msgid "A full table is listed below."
+msgstr "您可以参照下方的完整表格。"
+
+msgid "again to switch to the next word."
+msgstr "来跳转到下一个所需标注的单词单词。"
+
+msgid "Repeat steps 2 and 3 until you finish tagging for all words."
+msgstr "重复步骤 2 和 3 直到完成所有单词的标注。"
+
+msgid "to submit your result."
+msgstr "来提交您的结果。"
+
+msgid "Letter(s)"
+msgstr "首字母"
+
+msgid "for"
+msgstr "对应"
+
+msgid "etc."
+msgstr "等等。"
+
+msgid "POS"
+msgstr "词性"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/my_profile.html:329
+msgid "We'll keep privacy of your balance and ensure the safety of your money"
+msgstr "我们会保密您的余额，保证您的财产安全"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task_creator.html:10
+msgid "POS Task Description"
+msgstr "POS 任务描述"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_single_task_creator.html:71
+msgid "Export"
+msgstr "导出"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_sub_task_list.html:18
+msgid "Retag"
+msgstr "重新标注"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_sub_task_list.html:23
+msgid "at "
+msgstr "在 "
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_sub_task_list.html:30
+msgid "View Result"
+msgstr "查看结果"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_task_list.html:17
+msgid "My Task"
+msgstr "我的任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/pos_task_list.html:42
+msgid "sentences"
+msgstr "句子"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/upload_image.html:12
+#: crowdsourcedtagging/templates/crowdsourcedtagging/upload_pos.html:12
+msgid "The money in your account is not enough"
+msgstr "您的余额不足"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/upload_image.html:19
+#: crowdsourcedtagging/templates/crowdsourcedtagging/upload_pos.html:19
+msgid "See Task"
+msgstr "查看任务"
+
+#: crowdsourcedtagging/templates/crowdsourcedtagging/upload_image.html:31
+#: crowdsourcedtagging/templates/crowdsourcedtagging/upload_pos.html:31
+msgid "Upload"
+msgstr "上传"
+
+msgid "View Tagging Result"
+msgstr "查看标记结果"
+
+#: crowdsourcedtagging/views.py:96 crowdsourcedtagging/views.py:114
+msgid "Invalid image subtask"
+msgstr "不合法的图片自任务"
+
+#: crowdsourcedtagging/views.py:100
+msgid "Empty image subtask"
+msgstr "图片子任务为空"
+
+#: crowdsourcedtagging/views.py:103
+msgid "Images for "
+msgstr "图片内容："
+
+#: crowdsourcedtagging/views.py:122
+msgid "Image Task for "
+msgstr "图片任务内容："
+
+#: crowdsourcedtagging/views.py:135 crowdsourcedtagging/views.py:280
+#: crowdsourcedtagging/views.py:325
+msgid "You must use a POST request for this operation"
+msgstr "该操作只能通过POST请求进行"
+
+#: crowdsourcedtagging/views.py:138
+msgid "You should not change image task id"
+msgstr "图片任务自有ID不允许被用户更改"
+
+#: crowdsourcedtagging/views.py:141
+msgid "You should not change image task tag"
+msgstr "图片标签不允许被用户更改"
+
+msgid "or"
+msgstr "或者"
+
+#: crowdsourcedtagging/views.py:207
+msgid "Invalid POS subtask"
+msgstr "不合法的POS子任务"
+
+#: crowdsourcedtagging/views.py:211
+msgid "Empty POS subtask"
+msgstr "POS子任务为空"
+
+#: crowdsourcedtagging/views.py:214
+msgid "Sentences for "
+msgstr "句子内容："
+
+#: crowdsourcedtagging/views.py:225
+msgid "Invalid POS task"
+msgstr "不合法的 POS 任务"
+
+#: crowdsourcedtagging/views.py:247 crowdsourcedtagging/views.py:262
+msgid "POS Task for "
+msgstr "POS 任务内容："
+
+#: crowdsourcedtagging/views.py:283 crowdsourcedtagging/views.py:328
+#: crowdsourcedtagging/views.py:334
+msgid "Invalid pos task id"
+msgstr "不合法的 POS 任务 ID"
+
+#: crowdsourcedtagging/views.py:301
+msgid "Congratulations!"
+msgstr "恭喜！"
+
+#: crowdsourcedtagging/views.py:302
+msgid "You have completed all sub-tasks for task "
+msgstr "您已完成该任务下的所有的子任务"
+
+#: crowdsourcedtagging/views.py:336
+msgid "You are not the creator of this task"
+msgstr "无权限：您不是这个任务的创建者"
+
+#: crowdsourcedtagging/views.py:342
+msgid "No result yet for this task"
+msgstr "此任务尚无结果"
+
+#: crowdsourcedtagging/views.py:413 crowdsourcedtagging/views.py:455
+msgid "Successfully uploaded task "
+msgstr "成功上传任务"
+
+#: crowdsourcedtagging/views.py:486
+msgid "This profile does not belongs to you."
+msgstr "您无权修改本用户页"
+
+#: crowdsourcedtagging/views.py:505
+msgid "Profile Page for "
+msgstr "个人页："
+
+#: crowdsourcedtagging/views.py:644 crowdsourcedtagging/views.py:656
+msgid "No such user."
+msgstr "查无此用户"
+
+#: crowdsourcedtagging/views.py:678
+msgid "You must use POST for this method"
+msgstr "该方法需要POST请求"
+
+#: crowdsourcedtagging/views.py:680
+msgid "Amount not in request"
+msgstr "请求中缺少金额信息"
+
+#: crowdsourcedtagging/views.py:686
+msgid "Invalid amount number"
+msgstr "无效的金额信息"
+
+#: crowdsourcedtagging/viewsc.py:708
+msgid "Good morning,"
+msgstr "早上好，"
+
+#: crowdsourcedtagging/views.py:710
+msgid "Good afternoon,"
+msgstr "下午好，"
+
+#: crowdsourcedtagging/views.py:712
+msgid "Good evening,"
+msgstr "晚上好，"
+
+#: crowdsourcedtagging/views.py:726
+msgid "Finished Image Tasks"
+msgstr "已完成的图片信息"
+
+#: crowdsourcedtagging/views.py:751
+msgid "Your finished Image Task for "
+msgstr "您已完成的图片任务"
+
+#: crowdsourcedtagging/views.py:770
+msgid "Finished POS Tasks"
+msgstr "已完成的POS任务"
+
+#: crowdsourcedtagging/views.py:794
+msgid "Your finished POS Task for "
+msgstr "您完成的POS任务"
+
+#: crowdsourcedtagging/views.py:820
+msgid "Your Uploaded Image Tasks"
+msgstr "您上传的图片任务"
+
+#: crowdsourcedtagging/views.py:850
+msgid "Your Uploaded POS Tasks"
+msgstr "您上传POS任务"
+
+#: crowdsourcedtagging/views.py:875
+msgid "Error"
+msgstr "错误"
+
+msgid "Please use enter to separate the image links."
+msgstr "请使用回车一行键入一个图片URL。"

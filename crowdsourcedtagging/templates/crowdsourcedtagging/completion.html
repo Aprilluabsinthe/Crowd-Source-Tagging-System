@@ -1,0 +1,12 @@
+{% extends 'crowdsourcedtagging/logged_in_base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <div>
+        <div class="alert alert-success" role="alert">{{ message }}</div>
+        <div class="row justify-content-center">
+            <a href="{% url 'postasklist' 1 %}" class="btn btn-primary">{% trans "See all POS tasks" %}</a>
+        </div>
+    </div>
+{% endblock %}

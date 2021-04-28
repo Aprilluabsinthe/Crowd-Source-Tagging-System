@@ -1,0 +1,46 @@
+{% extends 'crowdsourcedtagging/logged_in_base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <main role="main">
+        <div class="album py-5">
+            <div class="container">
+                <div class="row">
+                    {% for pos_task in pos_tasks %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text">{{ pos_task.pos_task_text }}</p>
+                                    {% if time %}
+                                        <p>
+                                            <a class="btn btn-primary" href="{% url 'possingletask' pos_task.id %}"
+                                               role="button">{% trans "Retag" %} »</a>
+                                        </p>
+                                        {% for posid,postime in time.items %}
+                                            {% if posid == pos_task.id %}
+                                                <small class="text-muted">{% trans "Last tagged" %}
+                                                    {% trans "at " %} {{ postime | date:'n/j/Y g:i A' }}</small>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% else %}
+                                        <p>
+                                            {% if pos_task.parent_task.task_creator == request.user %}
+                                                <a class="btn btn-primary" href="{% url 'possingletask' pos_task.id %}"
+                                                   role="button">{% trans "View Result" %} »</a>
+                                            {% else %}
+                                                <a class="btn btn-primary" href="{% url 'possingletask' pos_task.id %}"
+                                                   role="button">{% trans "Tag" %} »</a>
+                                            {% endif %}
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

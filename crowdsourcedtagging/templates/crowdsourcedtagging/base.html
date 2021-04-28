@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+{% load i18n %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CrowdSourcedTagging</title>
+    {% load static %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="{% static 'css/album.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/linechart.css' %}" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="{% static 'crowdsourcedtagging/logo5.png' %}"/>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'crowdsourcedtagging/logo5.png' %}" alt="logo" height="60em">
+        &nbsp;{% trans "Crowdsourced Tagging" %}
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            {% block navbar-link %}
+            {% endblock %}
+        </ul>
+    </div>
+</nav>
+<br/>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <span id="id_page_name" class="h1">{{ pageName }}</span>
+    </div>
+    <br/>
+    <div class="errorlist" id="errorlist">
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% block content %}
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
+</div>
+
+<footer class="text-muted">
+    <div class="container">
+        <p class="float-right">
+            <a href="#">{% trans "Back to top" %}</a>
+        </p>
+        <p>{% trans "This is a crowd source tagging project for course 17-637" %} </p>
+        <p>{% trans "Team members" %} <a href="https://kuixisong.one/">@{% trans "Kuixi Song" %}</a>,
+            @{% trans "Yubin Gao" %}, @{% trans "Di Lu" %}.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+{% extends 'crowdsourcedtagging/logged_in_base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <main role="main">
+        <div class="album py-5">
+            <div class="container">
+                <div class="row">
+                    {% for image_task in image_tasks %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <a href="{% url 'imagesingletask' image_task.id %}">
+                                    <img src="{{ image_task.image_task_url }}" class="bd-placeholder-img card-img-top"
+                                         width="100%" alt="{{ image_task.image_task_description }}"/>
+                                </a>
+                                <div class="card-body">
+                                    <p class="card-text">{{ image_task.image_task_description }}</p>
+                                    {% if task_creator == request.user %}
+                                        <p>
+                                            <a class="btn btn-primary"
+                                               href="{% url 'imagesingletask' image_task.id %}"
+                                               role="button">{% trans "Details" %} »</a>
+                                        </p>
+                                    {% else %}
+                                        {% if time %}
+                                            <p>
+                                                <a class="btn btn-primary"
+                                                   href="{% url 'imagesingletask' image_task.id %}"
+                                                   role="button">{% trans "Retag" %} »</a>
+                                            </p>
+                                            {% for imgid,imgtime in time.items %}
+                                                {% if imgid == image_task.id %}
+                                                    <small class="text-muted">{% trans "Last tagged" %}
+                                                        {% trans "at" %} {{ imgtime | date:'n/j/Y g:i A' }}</small>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% else %}
+                                            <p>
+                                                <a class="btn btn-primary"
+                                                   href="{% url 'imagesingletask' image_task.id %}"
+                                                   role="button">{% trans "Tag" %} »</a>
+                                            </p>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

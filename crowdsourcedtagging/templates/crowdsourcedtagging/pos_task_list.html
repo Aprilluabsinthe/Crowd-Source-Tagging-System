@@ -1,0 +1,94 @@
+{% extends 'crowdsourcedtagging/logged_in_base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <main role="main">
+        <div class="album py-5">
+            <div class="container">
+                <div class="row">
+                    {% for task in tasks %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <h2>{{ task.task_name }}
+                                        {% if task.task_creator == request.user %}
+                                            <h5>
+                                                <span class="badge badge-pill badge-primary">{% trans "My Task" %}</span>
+                                            </h5>
+                                        {% else %}
+                                            {% if task.finished %}
+                                                <h5>
+                                                <span class="badge badge-pill badge-info">
+						{% trans "Finished" %}
+                                                </span>
+                                                </h5>
+                                            {% else %}
+                                                <h5>
+                                                <span class="badge badge-pill badge-success">
+                                                <i class="bi bi-cash">&nbsp;{{ task.reward }}</i>
+                                                </span>
+                                                </h5>
+                                            {% endif %}
+                                        {% endif %}
+                                    </h2>
+                                    <p class="card-text">{{ task.task_description }}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p>
+                                            <a class="btn btn-primary" href="{% url "possublist" task.id %}"
+                                               role="button">
+                                                {% trans "View details »" %}</a>
+                                        </p>
+                                        <small class="text-muted">{{ task.count }} {% trans "sentences" %}</small>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">{% trans 'Created by' %} <a
+                                                href={% url 'profile' task.task_creator_id %}>{{ task.task_creator }}</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                {% if currPage != 1 %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'postasklist' currPage|add:-1 %}"
+                           tabindex="-1">{% trans 'Previous' %}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">{% trans 'Previous' %}</a>
+                    </li>
+                {% endif %}
+
+                {% for i in pageRange %}
+                    {% if i == currPage %}
+                        <li class="page-item active">
+                            <a class="page-link" href="{% url 'postasklist' i %}">{{ i }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="{% url 'postasklist' i %}">{{ i }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if currPage|add:1 != pageRange.stop %}
+                    <li class="page-item">
+                        <a class="page-link" href="{% url 'postasklist' currPage|add:1 %}">{% trans 'Next' %}</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-disabled="true">{% trans 'Next' %}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </main>
+{% endblock %}

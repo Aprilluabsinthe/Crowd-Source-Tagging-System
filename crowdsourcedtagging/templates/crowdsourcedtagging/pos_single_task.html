@@ -1,0 +1,153 @@
+{% extends 'crowdsourcedtagging/logged_in_base.html' %}
+
+{% load crowdsourcedtagging_filters %}
+
+{% load i18n %}
+
+{% block content %}
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <h3>{% trans "POS Task Description" %}</h3>
+            <h5>{{ pos_task.pos_task_description }}</h5>
+            <p>{{ pos_task.pos_task_text }}</p>
+            <div class="bd_example">
+                <a href="{% url 'possublist' pos_task.parent_task.id %}">
+                    <button type="button" class="btn btn-lg btn-outline-primary">{% trans 'Back' %}</button>
+                </a>
+                {% if pos_task.prev_task_id %}
+                    <a href="{% url 'possingletask' pos_task.prev_task_id %}">
+                        <button type="button" class="btn btn-lg btn-outline-primary">{% trans 'Prev' %}</button>
+                    </a>
+                {% endif %}
+                {% if pos_task.next_task_id %}
+                    <a href="{% url 'possingletask' pos_task.next_task_id %}">
+                        <button type="button" class="btn btn-lg btn-outline-primary">{% trans 'Next' %}</button>
+                    </a>
+                {% endif %}
+            </div>
+            <br/>
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h4 class="mb-0">
+                            <button class="btn text-left" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {% trans "Tagging Tips" %}
+                            </button>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>{% trans "You can use shortcut on your keyboard to expedite the tagging process. To do so," %}</p>
+                            <ol>
+                                <li>{% trans "Press" %}
+                                    <code>Tab</code> {% trans "until it focuses on the dropdown of the first word on the right." %}
+                                </li>
+                                <li>{% trans "Type the first few letters for the POS tag that you want to select for this word. For example," %}
+                                    <code>v</code> {% trans "for" %} <code>Verb</code>,
+                                    <code>a</code> {% trans "for" %} <code>Adjective</code>, {% trans "etc." %}
+                                    {% trans "A full table is listed below." %}
+                                </li>
+                                <li>{% trans "Press" %} <code>Tab</code> {% trans "again to switch to the next word." %}
+                                </li>
+                                <li>{% trans "Repeat steps 2 and 3 until you finish tagging for all words." %}</li>
+                                <li>{% trans "Press" %} <code>Enter</code> {% trans "to submit your result." %}</li>
+                            </ol>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>{% trans "Letter(s)" %}</th>
+                                    <th>{% trans "POS" %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><code>n</code></td>
+                                    <td><code>Noun</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>v</code></td>
+                                    <td><code>Verb</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>a</code></td>
+                                    <td><code>Adjective</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>adv</code></td>
+                                    <td><code>Adverb</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>p</code></td>
+                                    <td><code>Preposition</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>pro</code></td>
+                                    <td><code>Pronoun</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>c</code></td>
+                                    <td><code>Conjunction</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>i</code></td>
+                                    <td><code>Interjection</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>pu</code></td>
+                                    <td><code>Punctuation</code></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">
+                    {% trans 'Tagging POS' %}
+                    {% if prev_selection %}
+                        <span id="tagged" class="badge badge-pill badge-info">{% trans 'Tagged' %}</span>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'postag' %}">
+                        <label>
+                            <input type="hidden" name="pos_task_id" value="{{ pos_task.id }}"/>
+                        </label>
+                        {% for word in pos_task.words %}
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text"
+                                           for="inputGroupSelect_{{ forloop.counter0 }}">{{ word }}</label>
+                                </div>
+                                <select name="pos_selection_{{ forloop.counter0 }}" class="custom-select"
+                                        id="inputGroupSelect_{{ forloop.counter0 }}" required>
+                                    <option value="">Choose...</option>
+                                    {% for k, v in pos_dict.items %}
+                                        {% if prev_selection|index:forloop.parentloop.counter0 == k %}
+                                            <option value="{{ k }}" selected>{{ v }}</option>
+                                        {% else %}
+                                            <option value="{{ k }}">{{ v }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        {% endfor %}
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-lg btn-primary" id="id_submit_image">
+                                {% trans 'Submit' %}
+                            </button>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <br/>
+        </div>
+    </div>
+{% endblock %}

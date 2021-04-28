@@ -1,0 +1,38 @@
+{% extends "crowdsourcedtagging/base.html" %}
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="699339935095-k4pco6s8olvj1jksgr8t8s25ojcgh9kf.apps.googleusercontent.com">
+
+{% block navbar-link %}
+    <span class="navbar-text">
+        <a href="{% url 'login' %}" id="id_login_link">Login</a>
+    </span>
+{% endblock %}
+
+{% load i18n %}
+
+{% block content %}
+    {% if form.username.errors %}
+        <div class="errorlist">
+            {% for error in form.username.errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'register' %}">
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                <label>{{ field.label_tag }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-primary" id="id_register_button">{% trans "Register" %}</button>
+        </div>
+
+        {% csrf_token %}
+    </form>
+
+{% endblock %}
+

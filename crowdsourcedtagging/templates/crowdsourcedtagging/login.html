@@ -1,0 +1,41 @@
+{% extends "crowdsourcedtagging/base.html" %}
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
+{% load i18n %}
+
+{% load static %}
+<script src={% static 'crowdsourcedtagging/js/signin.js'%} async defer></script>
+<meta name="google-signin-client_id" content="699339935095-k4pco6s8olvj1jksgr8t8s25ojcgh9kf.apps.googleusercontent.com">
+
+{% block navbar-link %}
+    <span class="navbar-text">
+        <a href="{% url 'register' %}" id="id_register_link">{% trans 'Register' %}</a>
+    </span>
+{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'login' %}">
+        {% for field in form.visible_fields %}
+            <div class="form-group">
+                <label>{{ field.label_tag }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-primary" id="id_login_button">  {% trans 'Login' %} </button>
+        </div>
+
+        {% csrf_token %}
+    </form>
+
+    <br/>
+    <div class="row justify-content-center">
+        <div id="my-signin2" class="btn btn-info" onclick="location.href='{% url 'login_google' %}'">{% trans 'Sign in with Google' %}</div>
+    </div>
+
+</script>
+
+
+{% endblock %}
+

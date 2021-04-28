@@ -1,0 +1,82 @@
+{% extends 'crowdsourcedtagging/logged_in_base.html' %}
+
+{% load crowdsourcedtagging_filters %}
+
+{% load i18n %}
+
+{% block content %}
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <h3>{% trans "POS Task Description" %}</h3>
+            <h5>{{ pos_task.pos_task_description }}</h5>
+            <p>{{ pos_task.pos_task_text }}</p>
+            <div class="progress">
+                <div class="progress-bar"
+                     role="progressbar"
+                     style="width: {{ pos_task_progress }}%;"
+                     aria-valuenow="{{ pos_task_finished_count }}"
+                     aria-valuemin="0"
+                     aria-valuemax="{{ pos_task_all_count }}">
+                    {{ pos_task_finished_count }} / {{ pos_task_all_count }}
+                </div>
+            </div>
+            <br/>
+            <div class="bd_example">
+                <a href="{% url 'possublist' pos_task.parent_task.id %}">
+                    <button type="button" class="btn btn-lg btn-outline-primary">{% trans "Back" %}</button>
+                </a>
+                {% if pos_task.prev_task_id %}
+                    <a href="{% url 'possingletask' pos_task.prev_task_id %}">
+                        <button type="button" class="btn btn-lg btn-outline-primary">{% trans "Prev" %}</button>
+                    </a>
+                {% endif %}
+                {% if pos_task.next_task_id %}
+                    <a href="{% url 'possingletask' pos_task.next_task_id %}">
+                        <button type="button" class="btn btn-lg btn-outline-primary">{% trans "Next" %}</button>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-header">
+                    {% trans "View Tagging Result" %}
+                    {% if prev_selection %}
+                        <span id="tagged" class="badge badge-pill badge-info">{% trans "Tagged" %}</span>
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'export_pos_task' %}">
+                        <label>
+                            <input type="hidden" name="pos_task_id" value="{{ pos_task.id }}"/>
+                        </label>
+                        {% for word in pos_task.words %}
+                            <h6>{{ word }}</h6>
+                            <div class="progress">
+                                {% for pos in pos_dict %}
+                                    <div class="progress-bar {{ pos_color_dict|index:pos }}"
+                                         role="progressbar"
+                                         style="width: {{ pos_result|index:forloop.parentloop.counter0|index:pos }}%"
+                                         aria-valuenow="{{ pos_result|index:forloop.parentloop.counter0|index:pos }}"
+                                         aria-valuemin="0"
+                                         aria-valuemax="100">
+                                        {{ pos_dict|index:pos }}: {{ pos_result|index:forloop.parentloop.counter0|index:pos }}%
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <br/>
+                        {% endfor %}
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-lg btn-secondary">
+                                {% trans "Export" %}
+                            </button>
+                        </div>
+                        {% csrf_token %}
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <br/>
+        </div>
+    </div>
+{% endblock %}
