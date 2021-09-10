@@ -1,6 +1,4 @@
-# s21_team_2
-
-Repository for s21_team_2
+Crowd Source Tagging System
 
 # Prerequisites
 
